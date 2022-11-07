@@ -1,0 +1,16 @@
+.btn-own{
+    background-color: #4C8754;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 0px 9px;
+    color: rgb(209, 203, 195);
+    margin-top: 8%;
+    font: 300;
+}
+
+.my-icon{
+    margin: 5px;
+    color: black;
+}
