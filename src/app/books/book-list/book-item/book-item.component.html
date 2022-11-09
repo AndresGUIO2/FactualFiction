@@ -1,14 +1,40 @@
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated x mins ago</small></p>
+<div
+  class="card"
+  style="
+    cursor: pointer;
+    width: 70vw;
+    background-color: #30353d;
+    box-shadow: 1px 1px 2px rgb(41, 44, 59);
+    border-radius: 8px;
+  "
+>
+  <div
+    class="row d-flex justify-content-center align-items-center"
+    style="padding: 20px 0"
+  >
+    <div
+      class="d-flex justify-content-center align-items-center col-sm-12 col-md-4 col-xl-2"
+    >
+      <img
+        [src]="book.imagePath"
+        class="centereded"
+        alt="..."
+        style="max-height: 300px"
+      />
+    </div>
+    <div class="col-sm-12 col-md-7 col-xl-9">
+      <div class="card-body" style="padding: 0 20px; color: #c8d2de">
+        <div class="d-flex">
+          <h5 class="card-title my-size">{{ book.name }}</h5>
+          <p class="genre"> {{ book.genre }} </p>
         </div>
+
+        <hr />
+        <p class="card-text">{{ book.description }}</p>
+        <p class="card-text">
+          <small class="text-muted"> Author: {{ book.author }}</small>
+        </p>
       </div>
     </div>
   </div>
+</div>
