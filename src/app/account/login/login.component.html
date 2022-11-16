@@ -1,0 +1,49 @@
+<div class="container">
+  <div
+    class="container d-flex justify-content-between"
+    style="padding-top: 10px"
+  >
+    <h4 style="color: rgb(226, 224, 213); padding: 10px 0 0 10px">Login</h4>
+    <button
+      type="button"
+      class="my-close-button"
+      (click)="activeModal.dismiss('Cross click')"
+    >
+      <i class="fa-solid fa-xmark my-xmark"></i>
+    </button>
+  </div>
+  <hr />
+  <div class="modal-body">
+    <form>
+      <div class="d-flex flex-column align-items-center">
+        <div class="mb-3">
+          <input
+            type="email"
+            class="form-control my-field"
+            id="InputEmail"
+            aria-describedby="emailHelp"
+            placeholder="E-mail"
+          />
+          <div
+            id="emailHelp"
+            class="form-text"
+            style="color: rgb(238, 234, 215)"
+          ></div>
+        </div>
+        <div class="mb-3">
+          <input
+            type="password"
+            class="form-control my-field"
+            id="InputPassword"
+            placeholder="Password"
+          />
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="Check" />
+          <label class="form-check-label" for="Check">Stay connected</label>
+        </div>
+        <button type="submit" class="btn my-button">Enter</button>
+      </div>
+    </form>
+  </div>
+</div>

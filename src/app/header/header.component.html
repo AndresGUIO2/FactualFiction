@@ -14,14 +14,21 @@
     <div id="navcol-1" class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto">
         <li class="navbar-item">
-          <a class="nav-link" href="#">Read</a>
+          <a class="nav-link"  routerLink="/"></a>
         </li>
         <li class="navbar-item">
-          <a class="nav-link" href="#">Register</a>
+          <a 
+          class="nav-link"
+          (click)="register()"
+          style="cursor: pointer;"
+          >Register</a>
         </li>
         <li class="navbar-item">
-          <button class="btn btn-own d-flex">
-            Login <i class="fa-solid fa-right-to-bracket my-icon"></i>
+          <button 
+          class="btn btn-own d-flex"
+          (click)="login()"
+          >
+            Login<i class="fa-solid fa-right-to-bracket my-icon"></i>
           </button>
         </li>
       </ul>

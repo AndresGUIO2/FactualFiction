@@ -12,6 +12,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore'
+import { LoginComponent } from './account/login/login.component';
+import { RegisterComponent } from './account/register/register.component';
+import { RouterModule, Routes } from '@angular/router';
+import { BookReadComponent } from './books/book-list/book-item/book-read/book-read.component';
+
+const appRoutes : Routes =[
+  { path:'', component: BookListComponent },
+  { path: 'register', component: RegisterComponent },
+   { path: 'read/:id', component: BookReadComponent }
+]
 
 @NgModule({
   declarations: [
@@ -19,7 +29,10 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore'
     HeaderComponent,
     BooksComponent,
     BookListComponent,
-    BookItemComponent
+    BookItemComponent,
+    LoginComponent,
+    RegisterComponent,
+    BookReadComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +40,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore'
     NgbModule,
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

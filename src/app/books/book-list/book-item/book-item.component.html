@@ -1,12 +1,6 @@
 <div
-  class="card"
-  style="
-    cursor: pointer;
-    width: 70vw;
-    background-color: #30353d;
-    box-shadow: 1px 1px 2px rgb(41, 44, 59);
-    border-radius: 8px;
-  "
+  class="card my-card"
+  (click)="onSelected()"
 >
   <div
     class="row d-flex justify-content-center align-items-center"
@@ -17,7 +11,7 @@
     >
       <img
         [src]="book.imagePath"
-        class="centereded"
+        class="my-image"
         alt="..."
         style="max-height: 300px"
       />
@@ -26,7 +20,7 @@
       <div class="card-body" style="padding: 0 20px; color: #c8d2de">
         <div class="d-flex">
           <h5 class="card-title my-size">{{ book.name }}</h5>
-          <p class="genre"> {{ book.genre }} </p>
+          <p class="genre">{{ book.genre }}</p>
         </div>
 
         <hr />
