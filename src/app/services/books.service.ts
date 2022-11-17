@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
+import { addDoc, collection, collectionData, Firestore, doc, deleteDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs/internal/Observable';
 import { BookModel } from '../models/book-model';
 import { ChapterModel } from '../models/chapter-model';
@@ -21,10 +22,13 @@ export class BooksService {
     return collectionData(bookRef, { idField: 'id' }) as Observable<BookModel[]>
   }
 
-  getChapters(): Observable<ChapterModel[]>{
-    const chapterRef = collection(this.firestore, 'books/i8okB14059ZyJbC3nQEW/chapters')
-    return collectionData(chapterRef, { idField: 'id' }) as Observable<ChapterModel[]>
-
+  deleteBook(book: BookModel){
+    const bookDocRef = doc(this.firestore, 'books/' + book.id);
+    return deleteDoc(bookDocRef);
   }
 
+  getChapters(bookId): Observable<ChapterModel[]>{
+    const chapterRef = collection(this.firestore, 'books/'+ bookId+'/chapters')
+    return collectionData(chapterRef, { idField: 'id' }) as Observable<ChapterModel[]>
+  }
 }

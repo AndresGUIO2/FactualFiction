@@ -16,11 +16,15 @@ import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './account/register/register.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BookReadComponent } from './books/book-list/book-item/book-read/book-read.component';
+import { BookChapterComponent } from './books/book-list/book-item/book-read/book-chapter/book-chapter.component';
+import { BookAddComponent } from './books/book-list/book-add/book-add.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes : Routes =[
   { path:'', component: BookListComponent },
   { path: 'register', component: RegisterComponent },
-   { path: 'read/:id', component: BookReadComponent }
+  { path: 'read/:id', component: BookReadComponent },
+  { path: 'add-book', component: BookAddComponent }
 ]
 
 @NgModule({
@@ -32,13 +36,16 @@ const appRoutes : Routes =[
     BookItemComponent,
     LoginComponent,
     RegisterComponent,
-    BookReadComponent
+    BookReadComponent,
+    BookChapterComponent,
+    BookAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     RouterModule.forRoot(appRoutes)

@@ -1,7 +1,4 @@
-<div
-  class="card my-card"
-  (click)="onSelected()"
->
+<div class="card my-card" (click)="onSelected()">
   <div
     class="row d-flex justify-content-center align-items-center"
     style="padding: 20px 0"
@@ -25,10 +22,18 @@
 
         <hr />
         <p class="card-text">{{ book.description }}</p>
-        <p class="card-text">
-          <small class="text-muted"> Author: {{ book.author }}</small>
-        </p>
+
+        <div class="d-flex justify-content-between ">
+          <p class="card-text">
+            <small class="text-muted"> Author: {{ book.author }}</small>
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<button 
+class="btn" 
+style="color: rgb(172, 144, 144);"
+(click) = "onDeleteBook()"
+>Delete</button>

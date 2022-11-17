@@ -1,8 +1,12 @@
-<div class="d-flex gap-5 flex-wrap justify-content-center align-items-center" style="width: 100%;">
+<div class="d-flex gap-5 flex-wrap justify-content-center align-items-center">
   <app-book-item 
   *ngFor="let booke of books" 
-  [book]="booke"
-  (bookSelected)="bookSelected(booke)"
-  > 
-</app-book-item>
+  [book]="booke"> </app-book-item>
+</div>
+<br>
+<div style="text-align:center">
+  <button 
+  class="btn my-button"
+  (click)="onAddBook()"
+  >Add</button>
 </div>
