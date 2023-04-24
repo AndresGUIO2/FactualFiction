@@ -1,6 +1,10 @@
 <nav class="navbar navbar-dark navbar-expand-sm bg-black">
   <div class="container container-fluid d-flex">
-    <a class="navbar-brand" routerLink="/">
+    <a
+      class="navbar-brand"
+      routerLink="/"
+      aria-label="Go to the Factual Fiction website homepage"
+    >
       <strong>
         <h1>Factual Fiction</h1>
       </strong>
@@ -18,22 +22,20 @@
     <div id="navcol-1" class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto">
         <li class="navbar-item">
-          <a class="nav-link" routerLink="/"></a>
+          <a class="nav-link" routerLink="/" aria-label="Go to the homepage of the Factual Fiction website"></a>
         </li>
         <li class="navbar-item">
-          <a 
+          <a
             class="nav-link"
             (click)="register()"
-            style="cursor: pointer;"
+            style="cursor: pointer"
+            aria-label="Go to the registration page to create a new account"
           >
             Register
           </a>
         </li>
         <li class="navbar-item">
-          <button 
-            class="btn btn-own d-flex"
-            (click)="login()"
-          >
+          <button class="btn btn-own d-flex" (click)="login()">
             Login<i class="fa-solid fa-right-to-bracket my-icon"></i>
           </button>
         </li>
