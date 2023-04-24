@@ -4,24 +4,34 @@ import { addDoc, collection, collectionData, Firestore, doc, deleteDoc, orderBy,
 import { Observable } from 'rxjs/internal/Observable';
 import { BookModel } from '../models/book-model';
 import { ChapterModel } from '../models/chapter-model';
+import { shareReplay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
+  private booksCache$: Observable<BookModel[]>;
 
-  constructor(private firestore: Firestore) {}
+  constructor(private firestore: Firestore) {
+    this.initBooksCache();
+  }
+
+  private initBooksCache(): void {
+    const bookRef = collection(this.firestore, 'books');
+    const queryRef = query(bookRef, orderBy('index', 'asc'));
+    this.booksCache$ = collectionData(queryRef, { idField: 'id' }).pipe(
+      shareReplay(1)
+    ) as Observable<BookModel[]>;
+  }
 
   addBook(book: BookModel) {
     const bookRef = collection(this.firestore, 'books');
     return addDoc(bookRef, book);
   }
 
-getBooks(): Observable<BookModel[]> {
-  const bookRef = collection(this.firestore, 'books');
-  const queryRef = query(bookRef, orderBy('author', 'asc'));
-  return collectionData(queryRef, { idField: 'id' }) as Observable<BookModel[]>;
-}
+  getBooks(): Observable<BookModel[]> {
+    return this.booksCache$;
+  }
 
   deleteBook(book: BookModel){
     const bookDocRef = doc(this.firestore, 'books/' + book.id);
