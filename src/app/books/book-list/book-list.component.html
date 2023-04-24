@@ -1,6 +1,6 @@
 <div class="d-flex gap-3 flex-wrap justify-content-center align-items-center">
   <app-book-item 
-  *ngFor="let book of books" 
+  *ngFor="let book of books; trackBy: trackByFn" 
   [book]="book"> </app-book-item>
 </div>
 <br>

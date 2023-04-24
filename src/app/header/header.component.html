@@ -1,32 +1,38 @@
 <nav class="navbar navbar-dark navbar-expand-sm bg-black">
   <div class="container container-fluid d-flex">
-    <a class="navbar-brand" routerLink="/"><strong> <h1>Factual Fiction </h1></strong></a>
+    <a class="navbar-brand" routerLink="/">
+      <strong>
+        <h1>Factual Fiction</h1>
+      </strong>
+    </a>
     <button
       class="navbar-toggler align-content-center"
       data-bs-toggle="collapse"
       data-bs-target="#navcol-1"
     >
-      <span class="visually-hidden">Toggle navigation</span
-      ><span class="navbar-toggler-icon"></span>
+      <span class="visually-hidden">Toggle navigation</span>
+      <span class="navbar-toggler-icon"></span>
     </button>
   </div>
   <div class="s-margin">
     <div id="navcol-1" class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto">
         <li class="navbar-item">
-          <a class="nav-link"  routerLink="/"></a>
+          <a class="nav-link" routerLink="/"></a>
         </li>
         <li class="navbar-item">
           <a 
-          class="nav-link"
-          (click)="register()"
-          style="cursor: pointer;"
-          >Register</a>
+            class="nav-link"
+            (click)="register()"
+            style="cursor: pointer;"
+          >
+            Register
+          </a>
         </li>
         <li class="navbar-item">
           <button 
-          class="btn btn-own d-flex"
-          (click)="login()"
+            class="btn btn-own d-flex"
+            (click)="login()"
           >
             Login<i class="fa-solid fa-right-to-bracket my-icon"></i>
           </button>
@@ -36,4 +42,3 @@
   </div>
 </nav>
 
-<br />

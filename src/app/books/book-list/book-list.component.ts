@@ -19,7 +19,13 @@ export class BookListComponent implements OnInit {
       this.books = books;
     });
   }
+
   onAddBook(){
     this.router.navigate(['add-book']);
   }
+
+  trackByFn(index: number, book: BookModel): number {
+    return Number(book.id);
+  }
 }
+

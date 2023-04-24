@@ -1,16 +1,18 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { BookModel } from 'src/app/models/book-model';
 import { BooksService } from 'src/app/services/books.service';
+import { Subscription } from 'rxjs';
+import { BookModel } from 'src/app/models/book-model';
 
 @Component({
   selector: 'app-book-item',
   templateUrl: './book-item.component.html',
   styleUrls: ['./book-item.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BookItemComponent implements OnInit {
+export class BookItemComponent implements OnDestroy {
   @Input() book: BookModel;
+  private subscription: Subscription;
 
   constructor(private router: Router, private bookService : BooksService) {}
 
@@ -18,12 +20,15 @@ export class BookItemComponent implements OnInit {
     this.router.navigate(['/read/' + this.book.id])
   }
 
-  ngOnInit(): void {
-    console.log(this.book)
+  onDeleteBook(){
+    //this.subscription = this.bookService.deleteBook(this.book).subscribe(() => {});
+    console.log("Book deleted successfully");
   }
 
-  async onDeleteBook(){
-    //await this.bookService.deleteBook(this.book);
-    alert("You don't have permission to do this")
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }
+
