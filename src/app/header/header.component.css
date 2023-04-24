@@ -2,9 +2,9 @@
     background-color: #4C8754;
     border-radius: 20px;
     padding: 0px 9px;
-    color: rgb(209, 203, 195);
+    color: #F1F1F1;
     margin-top: 8%;
-    font: 300;
+    font-weight: 300;
 }
 
 .my-icon{
@@ -26,4 +26,12 @@
 
 h1{
     font-size: larger;
+    color: #F1F1F1;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    padding-left: 20px;
+  }
+  
 }

@@ -1,4 +1,4 @@
-<div class="d-flex gap-3 flex-wrap justify-content-center align-items-center">
+<div class="d-flex gap-3 flex-wrap justify-content-center align-items-center space">
   <app-book-item 
     *ngFor="let book of books$ | async; trackBy: trackByFn" 
     [book]="book"

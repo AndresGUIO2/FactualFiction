@@ -21,3 +21,4 @@ export class HeaderComponent implements OnInit {
     const ModalRef = this.modalService.open(LoginComponent, { size: 'sm'});
   }
 }
+
