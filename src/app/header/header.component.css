@@ -20,6 +20,10 @@
     background-color: #4C8754;
 }
 
+.navbar-brand{
+    padding-left: 50px;
+}
+
 h1{
     font-size: larger;
 }
