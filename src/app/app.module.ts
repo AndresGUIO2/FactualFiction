@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,6 +46,8 @@ const appRoutes : Routes =[
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    NgbDropdownModule,
+    NgbAccordionModule,
     HttpClientModule,
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),

@@ -23,6 +23,7 @@ export class BookItemComponent implements OnInit {
   }
 
   async onDeleteBook(){
-    await this.bookService.deleteBook(this.book);
+    //await this.bookService.deleteBook(this.book);
+    alert("You don't have permission to do this")
   }
 }
