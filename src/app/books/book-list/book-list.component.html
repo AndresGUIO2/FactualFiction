@@ -1,12 +1,13 @@
 <div class="d-flex gap-3 flex-wrap justify-content-center align-items-center">
   <app-book-item 
-  *ngFor="let book of books; trackBy: trackByFn" 
-  [book]="book"> </app-book-item>
+    *ngFor="let book of books$ | async; trackBy: trackByFn" 
+    [book]="book"
+  ></app-book-item>
 </div>
 <br>
 <div style="text-align:center">
   <button 
-  class="btn my-button"
-  (click)="onAddBook()"
+    class="btn my-button"
+    (click)="onAddBook()"
   >Add</button>
 </div>
