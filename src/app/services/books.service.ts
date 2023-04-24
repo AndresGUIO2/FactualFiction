@@ -1,6 +1,7 @@
+
 import { Injectable } from '@angular/core';
 import { addDoc, collection, collectionData, Firestore, doc, deleteDoc, orderBy, query } from '@angular/fire/firestore';
-import { Observable, ReplaySubject } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 import { BookModel } from '../models/book-model';
 import { ChapterModel } from '../models/chapter-model';
 import { shareReplay } from 'rxjs/operators';
@@ -9,8 +10,9 @@ import { shareReplay } from 'rxjs/operators';
   providedIn: 'root'
 })
 
+
 export class BooksService {
-  private booksCache$: ReplaySubject<BookModel[]> = new ReplaySubject(1);
+  private booksCache$: Observable<BookModel[]>;
 
   constructor(private firestore: Firestore) {
     this.initBooksCache();
@@ -19,11 +21,9 @@ export class BooksService {
   private initBooksCache(): void {
     const bookRef = collection(this.firestore, 'books');
     const queryRef = query(bookRef, orderBy('index', 'asc'));
-    collectionData(queryRef, { idField: 'id' }).pipe(
+    this.booksCache$ = collectionData(queryRef, { idField: 'id' }).pipe(
       shareReplay(1)
-    ).subscribe((books: BookModel[]) => {
-      this.booksCache$.next(books);
-    });
+    ) as Observable<BookModel[]>;
   }
 
   addBook(book: BookModel) {
@@ -32,7 +32,7 @@ export class BooksService {
   }
 
   getBooks(): Observable<BookModel[]> {
-    return this.booksCache$.asObservable();
+    return this.booksCache$;
   }
 
   deleteBook(book: BookModel){
