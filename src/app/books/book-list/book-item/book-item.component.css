@@ -41,6 +41,11 @@
   font-size: smaller;
 }
 
+h3{
+    font-size: medium;
+    font-weight:  normal;
+}
+
 @media (max-width: 576px) {
     .my-card {
       width: 90vw;

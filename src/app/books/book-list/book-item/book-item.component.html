@@ -1,16 +1,16 @@
 <div class="card my-card" (click)="onSelected()">
   <div class="row d-flex justify-content-center align-items-center" style="padding: 20px 0">
     <div class="d-flex justify-content-center align-items-center col-sm-12 col-md-4 col-xl-2">
-      <img [src]="book.imagePath" class="my-image" alt="..." />
+      <img [src]="book.imagePath" class="my-image" alt="Portada del libro {{ book.name }}" />
     </div>
     <div class="col-sm-12 col-md-7 col-xl-9">
       <div class="card-body" style="padding: 0 20px; color: #c8d2de">
         <div class="d-flex">
-          <h5 class="card-title my-size">{{ book.name }}</h5>
+          <h2 class="card-title my-size"> {{ book.name }}</h2>
           <p class="genre">{{ book.genre }}</p>
         </div>
         <hr />
-        <p class="card-text">{{ book.description }}</p>
+        <h3 class="card-text">{{ book.description }}</h3>
         <div class="d-flex justify-content-between ">
           <p class="card-text">
             <small class="text-muted">Author: {{ book.author }}</small>
