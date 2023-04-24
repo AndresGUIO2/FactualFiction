@@ -1,24 +1,80 @@
-.my-image{
-    border-radius: 10px;
+.my-image {
+  border-radius: 10px;
+  max-height: 300px;
 }
 
-.genre{
-    background-color: rgb(45, 38, 58);
-    padding: 5px;
-    border-radius: 20px;
-    margin-left: 30px;
-    margin-top: 3px;
-    text-align: center;
+.genre {
+  background-color: rgb(45, 38, 58);
+  padding: 5px;
+  border-radius: 20px;
+  margin-left: 30px;
+  margin-top: 3px;
+  text-align: center;
 }
 
-.my-card{
-    cursor: pointer;
-    width: 70vw;
-    background-color: #323a47;
-    box-shadow: 1px 1px 2px rgb(41, 44, 59);
-    border-radius: 8px;
+.my-card {
+  cursor: pointer;
+  width: 70vw;
+  background-color: #323a47;
+  box-shadow: 1px 1px 2px rgb(41, 44, 59);
+  border-radius: 8px;
 }
 
-.my-card:hover{
-    background-color: #3d4757;
+.my-card:hover {
+  background-color: #3d4757;
 }
+
+.card-body {
+  padding: 0 20px;
+  color: #c8d2de;
+}
+
+.card-title {
+  margin-right: 30px;
+}
+
+.delete-button {
+  color: rgb(172, 144, 144);
+}
+
+.small {
+  font-size: smaller;
+}
+
+@media (max-width: 576px) {
+    .my-card {
+      width: 90vw;
+    }
+    
+    .row {
+      flex-direction: column;
+    }
+    
+    .my-image {
+      margin-bottom: 20px;
+      max-height: 200px;
+    }
+    
+    .genre {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+    
+    .delete-button {
+      margin-top: 20px;
+    }
+    
+    .card-title {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    
+    .card-body {
+      padding: 20px;
+    }
+    
+    .genre {
+      display: none;
+    }
+  }
+  
