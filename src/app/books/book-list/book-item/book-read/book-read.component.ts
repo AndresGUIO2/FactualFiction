@@ -35,4 +35,8 @@ export class BookReadComponent implements OnInit {
     this.selectedChapter = chapter;
     this.currentPage = this.chapters.indexOf(chapter) + 1;
   }
+
+  scrollToTop() {
+    document.documentElement.scrollTop = 0;
+  }
 }

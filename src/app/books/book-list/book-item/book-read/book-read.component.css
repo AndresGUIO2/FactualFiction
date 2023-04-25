@@ -1,0 +1,9 @@
+.my-button {
+    color:rgb(231, 226, 205);
+    border-color:rgb(47, 109, 165);
+}
+
+.my-button:hover {
+    background-color: rgb(47, 109, 165);
+    color:rgb(231, 226, 205);
+}

@@ -1,5 +1,5 @@
 .btn-own{
-    background-color: #4C8754;
+    background-color: rgb(47, 109, 165);
     border-radius: 20px;
     padding: 0px 9px;
     color: #F1F1F1;
@@ -17,7 +17,7 @@
 }
 
 .dark-modal{
-    background-color: #4C8754;
+    background-color: rgb(47, 109, 165);
 }
 
 .navbar-brand{

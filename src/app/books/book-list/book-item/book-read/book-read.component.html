@@ -1,67 +1,39 @@
-<div class="pagination-container">
-    <nav>
-      <ul class="pagination justify-content-center" style="border-color: #0a0c0f">
-        <li [class.disabled]="currentPage === 1">
-          <button
-            class="btn btn-primary pagination-btn btn-previous"
-            [disabled]="currentPage === 1"
-            (click)="currentPage = currentPage - 1; selectChapter(chapters[currentPage - 1])"
-            style="background-color: #4c8754; border-color: #0a0c0f"
-          >
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-            Previous
-          </button>
-        </li>
-        <ng-container *ngFor="let chapter of chapters; let i = index">
-          <li class="page-item" [class.active]="i === currentPage - 1">
-            <button
-              class="btn btn-primary"
-              (click)="selectChapter(chapter)"
-              style="background-color: #4c8754; border-color: #0a0c0f"
-            >
-              {{ i + 1 }}: {{ chapter.name }}
-            </button>
-          </li>
-        </ng-container>
-        <li [class.disabled]="currentPage === chapters?.length">
-          <button
-            class="btn btn-primary pagination-btn btn-next"
-            [disabled]="currentPage === chapters?.length"
-            (click)="currentPage = currentPage + 1; selectChapter(chapters[currentPage - 1])"
-            style="background-color: #4c8754; border-color: #0a0c0f"
-          >
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-            Next
-          </button>
-        </li>
-      </ul>
-    </nav>
-  
-    <div *ngIf="selectedChapter" class="mt-3">
-      <app-book-chapter [chapter]="selectedChapter"></app-book-chapter>
-      <div class="pagination-chapter d-flex justify-content-center">
-        <button
-          class="btn btn-link pagination-btn"
-          [disabled]="currentPage === 1"
-          (click)="currentPage = currentPage - 1; selectChapter(chapters[currentPage - 1])"
-          style="color: #4c8754"
-        >
-          <span aria-hidden="true">&laquo;</span>
-          <span class="sr-only">Previous</span>
-          Previous
-        </button>
-        <button
-          class="btn btn-link pagination-btn"
-          [disabled]="currentPage === chapters?.length"
-          (click)="currentPage = currentPage + 1; selectChapter(chapters[currentPage - 1])"
-          style="color: #4c8754"
-        >
-          <span aria-hidden="true">&raquo;</span>
-          <span class="sr-only">Next</span>
-          Next
+<div class="container text-center" style="margin-top: 20px;">
+  <div class="d-flex">
+    <div class="col-2 " ngbDropdown class="d-inline-block">
+      <button type="button" class="btn my-button" id="dropdownBasic1" ngbDropdownToggle>
+        Chapters
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu">
+        <button ngbDropdownItem *ngFor="let chapter of chapters"
+                (click)="currentPage = chapter.index + 1; selectChapter(chapter)">
+          <span>{{ chapter.name }}</span>
         </button>
       </div>
     </div>
+    <div class="col-10">
+    </div>
   </div>
+
+  <div class="mt-3">
+    <app-book-chapter [chapter]="selectedChapter"></app-book-chapter>
+    <div class="pagination-chapter d-flex justify-content-center">
+      <button class="btn btn-link pagination-btn"
+              [disabled]="currentPage === 1"
+              (click)="currentPage = currentPage - 1; selectChapter(chapters[currentPage - 1])"
+              style="color: rgb(47, 109, 165)">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+        Previous
+      </button>
+      <button class="btn btn-link pagination-btn"
+              [disabled]="currentPage === chapters?.length"
+              (click)="currentPage = currentPage + 1; selectChapter(chapters[currentPage - 1]); scrollToTop()"
+              style="color: rgb(47, 109, 165)">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+        Next
+      </button>
+    </div>
+  </div>
+</div>

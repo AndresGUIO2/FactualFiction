@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { BooksComponent } from './books/books.component';
 import { BookListComponent } from './books/book-list/book-list.component';
@@ -21,6 +18,7 @@ import { BookReadComponent } from './books/book-list/book-item/book-read/book-re
 import { BookChapterComponent } from './books/book-list/book-item/book-read/book-chapter/book-chapter.component';
 import { BookAddComponent } from './books/book-list/book-add/book-add.component';
 import { FormsModule } from '@angular/forms';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes : Routes =[
   { path:'', component: BookListComponent },
@@ -45,11 +43,9 @@ const appRoutes : Routes =[
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
-    NgbDropdownModule,
-    NgbAccordionModule,
     HttpClientModule,
     FormsModule,
+    NgbDropdownModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     RouterModule.forRoot(appRoutes)
