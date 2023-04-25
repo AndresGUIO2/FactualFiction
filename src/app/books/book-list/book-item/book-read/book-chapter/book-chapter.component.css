@@ -13,6 +13,6 @@ pre {
 
 @media (max-width: 768px) {
   .text-area-with-margin {
-    padding: 20px;
+    padding: 8px 4px 4px 8px;
   }
 }
