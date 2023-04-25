@@ -1,5 +1,5 @@
-<div class="container text-center" style="margin-top: 20px;">
-  <div class="d-flex">
+<div class="container" style="margin-top: 20px;">
+  <div class="d-flex text-center">
     <div class="col-2 " ngbDropdown class="d-inline-block">
       <button type="button" class="btn my-button" id="dropdownBasic1" ngbDropdownToggle>
         Chapters
@@ -7,7 +7,7 @@
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu">
         <button ngbDropdownItem *ngFor="let chapter of chapters"
                 (click)="currentPage = chapter.index + 1; selectChapter(chapter)">
-          <span>{{ chapter.name }}</span>
+          <span>  {{ chapter.name }}</span>
         </button>
       </div>
     </div>
