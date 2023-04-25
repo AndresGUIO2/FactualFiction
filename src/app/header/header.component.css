@@ -29,6 +29,10 @@ h1{
     color: #F1F1F1;
 }
 
+.my-button-register{
+    color:aliceblue;
+}
+
 @media (max-width: 768px) {
   .navbar-brand {
     padding-left: 20px;

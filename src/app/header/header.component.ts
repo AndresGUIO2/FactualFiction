@@ -13,12 +13,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  register() {
-    const ModalRef = this.modalService.open(RegisterComponent, { size: 'lg', centered : true });
-  }
+  // register() {
+  //   const ModalRef = this.modalService.open(RegisterComponent, { size: 'lg', centered : true });
+  // }
 
-  login() {
-    const ModalRef = this.modalService.open(LoginComponent, { size: 'sm'});
-  }
+  // login() {
+  //   const ModalRef = this.modalService.open(LoginComponent, { size: 'sm'});
+  // }
 }
 
