@@ -23,6 +23,7 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 const appRoutes : Routes =[
   { path:'', component: BookListComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent},
   { path: 'read/:id', component: BookReadComponent },
   { path: 'add-book', component: BookAddComponent }
 ]
